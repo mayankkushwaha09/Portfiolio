@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio</title>
+    <link
+      rel="shortcut icon"
+      href="https://img.freepik.com/free-vector/branding-identity-corporate-vector-logo-m-design_460848-10168.jpg"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;1,500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --colorPrimary: #55e6a5;
+        --bgColor: #09101a;
+        --bodyBg: #02050a;
+        --colorWhite: #ffffff;
+        --colorBlack: #02050a;
+        --ratingColor: #ffba08;
+        --bodyColor: #a2a2a2;
+        --PrimaryFont: "Poppins", sans-serif;
+        --secondaryFont: "Open Sans", sans-serif;
+      }
+
+      /* reset css */
+      html {
+        scroll-behavior: smooth;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        list-style: none;
+        outline: none;
+        text-decoration: none;
+      }
+
+      body {
+        font-family: var(--PrimaryFont);
+        background-color: var(--bodyBg);
+        color: var(--colorWhite);
+        overflow-x: hidden;
+      }
+
+      a {
+        color: inherit;
+      }
+
+      .main {
+        display: flex;
+      }
+
+      .logo {
+        font-size: 32px;
+        font-weight: 700;
+      }
+
+      .sidebar {
+        width: 250px;
+        border-right: 2px solid #151c25;
+        height: 100vh;
+        background-color: var(--bgColor);
+        padding: 30px;
+        transition: all linear 0.3s;
+        position: fixed;
+        z-index: 50;
+      }
+
+      .hero-section {
+        background: url(./assets/banner_bg2.png) no-repeat;
+        height: 100vh;
+        width: 100%;
+        background-size: cover;
+        background-position: center;
+        position: relative;
+        left: 250px;
+        padding: 30px;
+        display: flex;
+      }
+
+      .menu .menu__items a {
+        display: flex;
+        align-items: center;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        margin-top: 30px;
+      }
+
+      .menu .menu__items a span {
+        width: 60px;
+        height: 60px;
+        background-color: #222831;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        margin-right: 15px;
+        font-size: 24px;
+        transition: all 0.5s ease;
+      }
+
+      .menu__text {
+        font-size: 14px;
+        color: var(--bodyColor);
+      }
+
+      .menu .menu__items a.active span {
+        background-color: var(--colorPrimary);
+      }
+
+      .menu .menu__items a.active .menu__text {
+        color: var(--colorPrimary);
+      }
+      .menu .menu__items a:hover span {
+        background-color: var(--colorPrimary);
+      }
+
+      .menu .menu__items a:hover .menu__text {
+        color: var(--colorPrimary);
+      }
+
+      .hero-section__wrapper {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 50%;
+      }
+
+      .hero-section__text h1 {
+        font-size: 55px;
+        line-height: 1.2;
+      }
+
+      .hero-section__text h1 span {
+        display: inline-block;
+      }
+
+      .flip-container {
+        perspective: 1000px;
+        width: 100%;
+        height: 50px;
+      }
+
+      .flipper {
+        width: 100%;
+        height: 100%;
+        transform-style: preserve-3d;
+        animation: flip 4s infinite;
+      }
+
+      .front,
+      .back {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        position: absolute;
+        backface-visibility: hidden;
+      }
+
+      .front {
+        color: #3498db;
+        transform: rotateX(0deg);
+        transform-origin: center;
+      }
+
+      .back {
+        color: #724641;
+        transform: rotateX(180deg);
+        transform-origin: center;
+      }
+
+      .btns {
+        position: relative;
+        color: #0ef;
+        padding: 10px 25px;
+        font-weight: 500;
+        letter-spacing: 3px;
+        background: transparent;
+        border: 2px solid #0ef;
+        cursor: pointer;
+      }
+
+      .btns:hover {
+        /* background: #ff004f; */
+        color: #1f242d;
+        box-shadow: 0 0 5px #0ef, 0 0 5px #0ef inset;
+      }
+
+      .btns::after {
+        position: absolute;
+        content: "";
+        width: 0;
+        height: 100%;
+        top: 0;
+        right: 0;
+        background: #0ef;
+        box-shadow: 0 0 20px #0ef;
+        z-index: -1;
+        transition: 0.3s;
+      }
+
+      .btns:hover:after {
+        left: 0;
+        width: 100%;
+      }
+
+      @keyframes flip {
+        0%,
+        100% {
+          transform: rotateX(0deg);
+        }
+        50% {
+          transform: rotateX(180deg);
+        }
+      }
+
+      .greentext {
+        color: var(--colorPrimary);
+      }
+
+      .hero-section p {
+        font-size: 20px;
+        margin: 30px 0;
+      }
+
+      .hamburger {
+        width: 30px;
+        height: 30px;
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        display: none;
+        z-index: 99;
+      }
+
+      .show-sidebar {
+        display: block;
+      }
+
+      @media (max-width: 991px) {
+        .hamburger {
+          display: block;
+        }
+        .hamburger.show-sidebar {
+          left: 260px;
+          display: block;
+        }
+        .show-sidebar {
+          display: none;
+        }
+        .hero-section__wrapper {
+          width: 75%;
+        }
+        .hero-section__text h1 {
+          font-size: 48px;
+        }
+        .hero-section {
+          left: 0;
+          padding-left: 30px;
+        }
+        .menu__text h1 {
+          font-size: 48px;
+        }
+      }
+
+      @media (max-width: 500px) {
+        .hero-section__wrapper {
+          width: 100%;
+        }
+        .hero-section__text h1 {
+          font-size: 36px;
+        }
+        .hero-section__wrapper p {
+          font-size: 16px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <section class="main">
+      <div class="sidebar show-sidebar">
+        <div class="sidebar__wrapper">
+          <div class="logo">MK</div>
+          <ul class="menu">
+            <li class="menu__items">
+              <a href="home.html" class="link">
+                <span>
+                  <img src="assets/home-alt-regular-24.png" alt="home" />
+                </span>
+                <div class="menu__text">Home</div>
+              </a>
+            </li>
+            <li class="menu__items">
+              <a href="home.html#about" class="link">
+                <span>
+                  <img src="assets/copy-solid-24.png" alt="about" />
+                </span>
+                <div class="menu__text">About</div></a
+              >
+            </li>
+            <li class="menu__items">
+              <a href="home.html#services" class="link">
+                <span>
+                  <img src="assets/briefcase-regular-24.png" alt="services" />
+                </span>
+                <div class="menu__text">Services</div></a
+              >
+            </li>
+            <li class="menu__items">
+              <a href="home.html#skills" class="link">
+                <span>
+                  <img src="assets/pen-regular-24.png" alt="skills" />
+                </span>
+                <div class="menu__text">Skills</div></a
+              >
+            </li>
+            <li class="menu__items">
+              <a href="home.html#portfolio" class="link">
+                <span>
+                  <img src="assets/contact-solid-24.png" alt="portfolio" />
+                </span>
+                <div class="menu__text">Projects</div></a
+              >
+            </li>
+            <li class="menu__items">
+              <a href="home.html#contact" class="link">
+                <span>
+                  <img src="assets/chat-regular-24.png" alt="contact" />
+                </span>
+                <div class="menu__text">Contact</div></a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <div class="hero-section">
+      <div class="hamburger">
+        <img src="assets/menu-regular-24.png" alt="" />
+      </div>
+      <div class="hero-section__wrapper">
+        <div class="hero-section__text">
+          <h1>
+            Hi this is Mayank <br />
+            <span class="greentext"
+              >Creative <br />
+              <div class="flip-container">
+                <div class="flipper">
+                  <div class="front">Designer</div>
+                  <div class="back">Developer</div>
+                </div>
+              </div>
+            </span>
+          </h1>
+        </div>
+        <p>
+          Create visually appealing and user-friendly interfaces through coding,
+          design,<br />
+          and collaboration as a frontend developer.
+        </p>
+        <div class="hero-section__buttoon">
+          <button class="btns">
+            <a href="assets/Resume.pdf" download>Download Resume</a>
+          </button>
+        </div>
+      </div>
+    </div>
+    <script>
+      const menu = document.querySelector(".menu");
+
+      menu.addEventListener("click", function (e) {
+        if (e.target.closest("a")) {
+          const anchorLinks = document.querySelectorAll(".menu__items a");
+
+          anchorLinks.forEach((item) => {
+            item.classList.remove("active");
+          });
+
+          e.target.closest(".menu__items a").classList.add("active");
+        }
+      });
+
+      const sidebar = document.querySelector(".sidebar");
+      const hamburger = document.querySelector(".hamburger");
+
+      hamburger.addEventListener("click", function () {
+        sidebar.classList.toggle("show-sidebar");
+        hamburger.classList.toggle("show-sidebar");
+      });
+    </script>
+  </body>
+</html>
