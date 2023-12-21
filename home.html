@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link
+      rel="shortcut icon"
+      href="https://img.freepik.com/free-vector/branding-identity-corporate-vector-logo-m-design_460848-10168.jpg"
+      type="image/x-icon"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>Portfolio</title>
+  </head>
+
+  <body>
+    <div id="header">
+      <div class="container">
+        <nav>
+          <img src="images/images.jpeg" class="logo" />
+          <ul id="sidebar">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Service</a></li>
+            <li><a href="#portfolio">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <i class="fa-regular fa-circle-xmark" onclick="closemenu()"></i>
+          </ul>
+          <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+        </nav>
+        <div class="header-text">
+          <p>Frontend Developer</p>
+          <h1>Hi I'm <span>Mayank</span> <br />from India</h1>
+        </div>
+      </div>
+    </div>
+
+    <!-- --------------about---------------- -->
+
+    <div id="about">
+      <div class="container">
+        <div class="row">
+          <div class="about-col-1">
+            <img src="images/userAbout.jpg" height="700px" />
+          </div>
+          <div class="about-col-2">
+            <h1 class="sub-title">About me</h1>
+            <p>
+              I'm a final year computer science student with a genuine passion
+              for the tech industry. I'm enthusiastic about exploring diverse
+              opportunities and technologies within this field. Additionally, I
+              have gained valuable experience through an internship as a web
+              developer and active participation in multiple projects.
+            </p>
+
+            <div class="tab-titles">
+              <p class="tab-links active-link" onclick="opentab('skills')">
+                Skills
+              </p>
+              <p class="tab-links" onclick="opentab('experience')">
+                Experience
+              </p>
+              <p class="tab-links" onclick="opentab('education')">Education</p>
+            </div>
+            <div class="tab-contents active-tab" id="skills">
+              <ul>
+                <li><span>Web Development</span><br />Web App Development</li>
+                <li>
+                  <span>Programming Languages</span><br />Java, Javascript
+                </li>
+                <li>
+                  <span>Libraries/Frameworks</span><br />HTML, CSS, Bootstrap
+                  ,React JS, Angular
+                </li>
+                <li>
+                  <span>Tools / Platforms</span><br />Vs Code , Visual Studio
+                </li>
+              </ul>
+            </div>
+            <div class="tab-contents" id="experience">
+              <ul>
+                <li>
+                  <span>Aug 2023 - Nov 2023</span><br />Intern at Prudentia
+                  Consulting India Pvt. Ltd.
+                </li>
+                <li>
+                  <span>Mar 2023 - Apr 2023</span><br />Intern at Oasis
+                  Infobyte.
+                </li>
+                <li>
+                  <span>Apr 2023 - May 2023</span><br />Intern at Bharat Intern.
+                </li>
+                <!-- <li><span>2016 - 2017</span><br>Internship at ekart eCommerce.</li> -->
+              </ul>
+            </div>
+            <div class="tab-contents" id="education">
+              <ul>
+                <li>
+                  <span>2024</span><br />BTech(CSE) from Galgotias University.
+                </li>
+                <li><span>2019</span><br />12th from KL Jain Inter College.</li>
+                <li><span>2017</span><br />10th from KL Jain Inter College.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ---------------Services-------------- -->
+
+    <div id="services">
+      <div class="container">
+        <h1 class="sub-title">My Services</h1>
+        <div class="services-list">
+          <div>
+            <i class="fa-solid fa-code"></i>
+            <h2>Web Design</h2>
+            <p>
+              Web design is the creation of websites and pages to reflect a
+              company's brand and information and ensure a user-friendly
+              experience.
+            </p>
+            <a href="#">Learn more</a>
+          </div>
+          <div>
+            <i class="fa-solid fa-crop-simple"></i>
+            <h2>UI/UX Design</h2>
+            <p>
+              A UI/UX Design focuses on creating a user interface and experience
+              for a digital product, such as a website, mobile app, or software
+              application.
+            </p>
+            <a href="#">Learn more</a>
+          </div>
+          <!-- <div>
+                    <i class="fa-brands fa-app-store-ios"></i>
+                    <h2>App Design</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis eveniet saepe sint atque facilis sunt commodi nulla iste.</p>
+                    <a href="#">Learn more</a>
+                </div> -->
+        </div>
+      </div>
+    </div>
+
+    <!-- ----------------Portfolio------------------ -->
+
+    <div id="portfolio">
+      <div class="container">
+        <h1 class="sub-title">Projects</h1>
+        <div class="work-list">
+          <div class="work">
+            <img src="images/work-1.png" />
+            <div class="layer">
+              <h3>User Management Website</h3>
+              <p>
+                The User Management Website is a robust and user-friendly
+                platform crafted to empower organizations in efficiently
+                handling user accounts and access privileges.
+              </p>
+              <a
+                href="https://github.com/mayankkushwaha09/User-Management-Angular"
+                ><i class="fa-solid fa-arrow-up-right-from-square"></i
+              ></a>
+            </div>
+          </div>
+
+          <div class="work">
+            <img src="images/work-2.png" />
+            <div class="layer">
+              <h3>News App</h3>
+              <p>
+                A News App is a digital tool you use on your phone or computer
+                to read or watch the latest news.
+              </p>
+              <a href="https://github.com/mayankkushwaha09/News-App"
+                ><i class="fa-solid fa-arrow-up-right-from-square"></i
+              ></a>
+            </div>
+          </div>
+          <div class="work">
+            <img src="images/work-3.png" />
+            <div class="layer">
+              <h3>Online Shopping Website</h3>
+              <p>
+                An Online Shopping Website is like a virtual store on the
+                internet. Instead of going to a physical store, you use your
+                computer or phone to browse through products, add items to your
+                digital cart, and then buy them online.
+              </p>
+              <a href="https://github.com/mayankkushwaha09/Ecommerce"
+                ><i class="fa-solid fa-arrow-up-right-from-square"></i
+              ></a>
+            </div>
+          </div>
+          <div class="work">
+            <img src="images/work-2.png" />
+            <div class="layer">
+              <h3>Weather App</h3>
+              <p>
+                A Weather Website is an online platform where you can check and
+                stay updated on the current and forecasted weather conditions
+                for different locations.
+              </p>
+              <a href="https://github.com/mayankkushwaha09/Weather-App"
+                ><i class="fa-solid fa-arrow-up-right-from-square"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+        <a
+          href="https://github.com/mayankkushwaha09?tab=repositories"
+          class="btn btn4"
+          >See more</a
+        >
+      </div>
+    </div>
+
+    <!-- ----------------Contact---------------- -->
+    <div id="contact">
+      <div class="container">
+        <div class="row">
+          <div class="contact-left">
+            <h1 class="sub-title">Contact Me</h1>
+            <p>
+              <i class="fa-solid fa-paper-plane"></i>mayankkushwaha546@gmail.com
+            </p>
+            <p><i class="fa-solid fa-square-phone"></i>+91 8859812993</p>
+            <div class="social-icons">
+              <a href="https://github.com/mayankkushwaha09"
+                ><i class="fa-brands fa-github"></i
+              ></a>
+              <a href="https://www.twitter.com/"
+                ><i class="fa-brands fa-square-twitter"></i
+              ></a>
+              <a href="https://www.instagram.com/"
+                ><i class="fa-brands fa-instagram"></i
+              ></a>
+              <a href="https://www.linkedin.com/in/mayank-kumar-803706208/"
+                ><i class="fa-brands fa-linkedin"></i
+              ></a>
+            </div>
+            <a href="assets/Resume.pdf" download class="btn btn2 btns"
+              >Download Resume</a
+            >
+          </div>
+          <div class="contact-right">
+            <form action="https://formspree.io/f/mwkgenqa" method="POST">
+              <input type="text" name="Name" placeholder="Your Name" required />
+              <input
+                type="email"
+                name="email"
+                placeholder="Your Email"
+                required
+              />
+              <textarea
+                name="Message"
+                rows="6"
+                placeholder="Your message"
+              ></textarea>
+              <button type="submit" class="btn btn2 btn3">Submit</button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div class="copyright">
+        <p>Copyright@ mayank.</p>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
